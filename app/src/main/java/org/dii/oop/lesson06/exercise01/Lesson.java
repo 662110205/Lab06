@@ -1,108 +1,79 @@
 package app.src.main.java.org.dii.oop.lesson06.exercise01;
 
+import java.util.Iterator;
 import java.util.Scanner;
-import java.util.ArrayList;//this exercise MUST use arrayList
-import java.lang.Math;
-
-public class Shape {
-    private String name = ""; //store the name of shape
-    private int numSide = 0; //store number of shape sides
-    protected double area = 0.0;
-    protected double perimeter = 0.0;
-    protected double rad = 0.0;
-
-    public double getArea(){
-        return area;
-    }
-    public double getPerimeter(){
-        return perimeter;
-    }
-}
-class Circle extends Shape {
-    public Circle(double rad){
-       this.rad  = rad;
-    }
-    public double calArea(double rad){
-        this.area = Math.PI * Math.pow(2, rad);
-        return area;
-    }
-    public double calPerimeter(double rad){
-        this.perimeter = Math.PI * 2 * rad;
-        return perimeter;
-    }
-}
-class Rectangle extends Shape {
-
-}
+import java.util.ArrayList; //this exercise MUST use arrayList
 
 public class Lesson {
     public static void run() {
-        ArrayList<String> StoreShape = new ArrayList<String>();
-        ArrayList<Integer> StoreSide = new ArrayList<Integer>();
-        ArrayList<Double> StoreArea = new ArrayList<Double>();
-        ArrayList<Double> StorePerimeter = new ArrayList<Double>();
-
-        //HINT1: usage arraylist with Shape class to store all of your shapes, check how to use arrayList by yourself
-
-        //HINT2: you may want to declare your arrayList around here
-
+        ArrayList<String> StoreShape = new ArrayList();
         Scanner in = new Scanner(System.in);
 
+        String choice;
         do {
             System.out.print("1. Circle\n2. Rectangle\n3. Square\n4. Display all shape\n5. exit\nPlease select [1-5]:");
-            //print menu as instructed in MD file
-
-            String choice = in.nextLine().trim();
-
-            // TODO: write your code here
-
+            choice = in.nextLine().trim();
+            String strSide;
+            double side;
             if ("1".equals(choice)) {
                 System.out.print("Enter radius: ");
-                String strRadius = in.nextLine();
-                double rad = Double.parseDouble(strRadius);
-
-                Circle circle = new Circle(rad);
-                circle.calArea(rad);
-
-                StoreArea.add(circle.getArea());
-                StorePerimeter.add(circle.getPerimeter());
-                StoreShape.add("Circle");
-                StoreSide.add(0);
-                //store to arrayList
+                strSide = in.nextLine();
+                side = Double.parseDouble(strSide);
+                Circle circle = new Circle(side);
+                circle.calArea(side);
+                circle.calPerimeter(side);
+                circle.setName("Circle");
+                StoreShape.add(circle.getName());
+                circle.setNumside(0);
+                StoreShape.add(circle.getNumside());
+                StoreShape.add(circle.getArea());
+                StoreShape.add(circle.getPerimeter());
             }
+
+            String name;
             if ("2".equals(choice)) {
                 System.out.print("Enter width: ");
-                String strWidth = in.nextLine();
+                strSide = in.nextLine();
                 System.out.print("Enter height: ");
-                String strHeight = in.nextLine();
-
-                StoreShape.add("Rectangle");
-                StoreSide.add(4);
-                
-                //store to arrayList
+                name = in.nextLine();
+                double width = Double.parseDouble(strSide);
+                double height = Double.parseDouble(name);
+                Rectangle rectangle = new Rectangle(width, height);
+                rectangle.calArea(width, height);
+                rectangle.calPerimeter(width, height);
+                rectangle.setName("Rectangle");
+                StoreShape.add(rectangle.getName());
+                rectangle.setNumside(4);
+                StoreShape.add(rectangle.getNumside());
+                StoreShape.add(rectangle.getArea());
+                StoreShape.add(rectangle.getPerimeter());
             }
+
             if ("3".equals(choice)) {
                 System.out.print("Enter side: ");
-                String strSide = in.nextLine();
-
-                StoreShape.add("Square");
-                StoreSide.add(4);
-                
-                //store to arrayList
+                strSide = in.nextLine();
+                side = Double.parseDouble(strSide);
+                Square square = new Square(side);
+                square.calArea(side);
+                square.calPerimeter(side);
+                square.setName("Square");
+                StoreShape.add(square.getName());
+                square.setNumside(4);
+                StoreShape.add(square.getNumside());
+                StoreShape.add(square.getArea());
+                StoreShape.add(square.getPerimeter());
             }
+
             if ("4".equals(choice)) {
-                System.out.print("List all shape: ");
-                
-                //print data as instructed
-                //check how to iterate through arrayList
+                System.out.println("List all shape: ");
+                Iterator var10 = StoreShape.iterator();
 
-                //HINT3: you can use getClass() function of arrayList to get the name of class. It might be useful : )
+                while (var10.hasNext()) {
+                    name = (String) var10.next();
+                    System.out.println("Name: " + name + ", Number of side: " + var10.next() + ", Area: " + var10.next() + ", Perimeter: " + var10.next());
+                }
             }
-            if ("5".equals(choice)) {
-                 break;
-            }
-           
-        } while(true);
+        } while (!"5".equals(choice));
 
         in.close();
     }
