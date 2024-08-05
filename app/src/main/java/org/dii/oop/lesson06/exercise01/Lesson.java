@@ -1,5 +1,7 @@
 package app.src.main.java.org.dii.oop.lesson06.exercise01;
 
+import app.src.main.java.org.dii.oop.lesson06.Shape.*;
+
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.ArrayList; //this exercise MUST use arrayList
@@ -23,11 +25,11 @@ public class Lesson {
                 circle.calArea(side);
                 circle.calPerimeter(side);
                 circle.setName("Circle");
-                StoreShape.add(circle.getName());
+                StoreShape.add(String.valueOf(circle.getName()));
                 circle.setNumside(0);
-                StoreShape.add(circle.getNumside());
-                StoreShape.add(circle.getArea());
-                StoreShape.add(circle.getPerimeter());
+                StoreShape.add(String.valueOf(circle.getNumside()));
+                StoreShape.add(String.valueOf(circle.getArea()));
+                StoreShape.add(String.valueOf(circle.getPerimeter()));
             }
 
             String name;
@@ -42,11 +44,11 @@ public class Lesson {
                 rectangle.calArea(width, height);
                 rectangle.calPerimeter(width, height);
                 rectangle.setName("Rectangle");
-                StoreShape.add(rectangle.getName());
+                StoreShape.add(String.valueOf(rectangle.getName()));
                 rectangle.setNumside(4);
-                StoreShape.add(rectangle.getNumside());
-                StoreShape.add(rectangle.getArea());
-                StoreShape.add(rectangle.getPerimeter());
+                StoreShape.add(String.valueOf(rectangle.getNumside()));
+                StoreShape.add(String.valueOf(rectangle.getArea()));
+                StoreShape.add(String.valueOf(rectangle.getPerimeter()));
             }
 
             if ("3".equals(choice)) {
@@ -57,11 +59,11 @@ public class Lesson {
                 square.calArea(side);
                 square.calPerimeter(side);
                 square.setName("Square");
-                StoreShape.add(square.getName());
+                StoreShape.add(String.valueOf(square.getName()));
                 square.setNumside(4);
-                StoreShape.add(square.getNumside());
-                StoreShape.add(square.getArea());
-                StoreShape.add(square.getPerimeter());
+                StoreShape.add(String.valueOf(square.getNumside()));
+                StoreShape.add(String.valueOf(square.getArea()));
+                StoreShape.add(String.valueOf(square.getPerimeter()));
             }
 
             if ("4".equals(choice)) {

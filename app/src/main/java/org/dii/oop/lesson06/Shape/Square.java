@@ -3,9 +3,9 @@
 // (powered by FernFlower decompiler)
 //
 
-package app.src.main.java.org.dii.oop.lesson06.exercise01;
+package app.src.main.java.org.dii.oop.lesson06.Shape;
 
-class Square extends Shape {
+public class Square extends Shape {
     public Square(double side) {
         this.side = side;
     }

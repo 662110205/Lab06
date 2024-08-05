@@ -3,9 +3,9 @@
 // (powered by FernFlower decompiler)
 //
 
-package app.src.main.java.org.dii.oop.lesson06.exercise01;
+package app.src.main.java.org.dii.oop.lesson06.Shape;
 
-class Shape {
+public class Shape {
     private String name = "";
     private int numSide = 0;
     protected double area = 0.0;
@@ -18,8 +18,8 @@ class Shape {
     Shape() {
     }
 
-    public String getArea() {
-        return String.valueOf(Math.floor(this.area * 100.0) / 100.0);
+    public double getArea() {
+        return Double.parseDouble(String.valueOf(Math.floor(this.area * 100.0) / 100.0));
     }
 
     public String getPerimeter() {
@@ -28,9 +28,8 @@ class Shape {
     public String getNumside(){
         return String.valueOf(numSide);
     }
-    public double setNumside(int num){
+    public void setNumside(int num){
         this.numSide = num;
-        return numSide;
     }
 
     public String setName(String name){
@@ -40,4 +39,6 @@ class Shape {
     public String getName(){
         return name;
     }
+
+
 }

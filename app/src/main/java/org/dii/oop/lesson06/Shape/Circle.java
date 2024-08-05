@@ -3,9 +3,9 @@
 // (powered by FernFlower decompiler)
 //
 
-package app.src.main.java.org.dii.oop.lesson06.exercise01;
+package app.src.main.java.org.dii.oop.lesson06.Shape;
 
-class Circle extends Shape {
+public class Circle extends Shape {
     public Circle(double rad) {
         this.rad = rad;
     }

@@ -3,9 +3,9 @@
 // (powered by FernFlower decompiler)
 //
 
-package app.src.main.java.org.dii.oop.lesson06.exercise01;
+package app.src.main.java.org.dii.oop.lesson06.Shape;
 
-class Rectangle extends Shape {
+public class Rectangle extends Shape {
     public Rectangle(double width, double high) {
         this.width = width;
         this.high = high;
